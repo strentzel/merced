@@ -1,0 +1,22 @@
+* Path needs to check original surface for min surface to avoid fp error.
+* Move intersect scale safe method to vec and use it in prism.c
+* Handle intersect scale error case in prism.  How do I set first and last?
+* Convex Normalizations
+- convexpolygon_project: requires minimum surface.
+- convexpolygon_intersect: edge directions
+* Path Normalizations
+- estimate_refraction: requires minimum surface
+- compute_reflection: requires minimum surface
+- reverse_project: requires minimum surface
+* Prism Divisions
+- NormFromRel: Divide by length of first parameter.
+- ComputeFull: Divide by distance to line.
+- ComputeFull: Divide by prism->mSinThetaD
+- ComputeFull: Fresnel equation computation.
+- IntersectPrism: Surface dir + maxdir - mindir
+- IntersectPrism: divide by s-surfacevec, n-minDir, x-maxDir
+  (s/2 - n) - (s + x - n) * (s/2 - n).(s + x - n)
+- create: Divide by light dir length.
+* Check Culet calculation
+* Test dimensions preserved in the cross section.
+* Test dimension calculations.
